@@ -1,15 +1,19 @@
-import React, {useState, useEffect, componentDidMount,Component} from 'react';
+import React, {useState, useEffect, componentDidMount, Component} from 'react';
 import MapView from 'react-native-map-clustering';
 import {Marker} from 'react-native-maps';
 import * as $ from '../../redux/actions';
 import {connect} from 'react-redux';
-const INITIAL_REGION = {
-  latitude: 39.43,
-  longitude: 35.3,
-  latitudeDelta: 9.25,
-  longitudeDelta: 9.15,
-};
-
+import Geolocation from '@react-native-community/geolocation';
+var INITIAL_REGION;
+Geolocation.getCurrentPosition(info => {
+  console.log(info);
+  INITIAL_REGION = {
+    latitude: info.coords.latitude,
+    longitude: info.coords.longitude,
+    latitudeDelta: 10,
+    longitudeDelta: 5,
+  };
+});
 class Home extends Component {
   componentDidMount() { 
     this.props.getData()
@@ -17,9 +21,17 @@ class Home extends Component {
   
   render() {
     console.log(this.props.PARK)
+            }}
+          />,
+        );
+      });
+
+      return markers;
+    };
+
     return (
       <MapView initialRegion={INITIAL_REGION} style={{flex: 1}}>
-    
+        {_generateMarkers(this.props.PARK)}
       </MapView>
     );
   }
