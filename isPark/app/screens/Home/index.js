@@ -1,17 +1,27 @@
+import {
+  Text,
+  StyleSheet,
+  View,
+  Dimensions,
+  FlatList,
+  Image,
+  ScrollView,
+} from 'react-native';
 import React, {useState, useEffect, componentDidMount, Component} from 'react';
 import MapView from 'react-native-map-clustering';
 import {Marker} from 'react-native-maps';
 import * as $ from '../../redux/actions';
 import {connect} from 'react-redux';
 import Geolocation from '@react-native-community/geolocation';
+import {colors} from '../../config';
 var INITIAL_REGION;
 Geolocation.getCurrentPosition(info => {
   console.log(info);
   INITIAL_REGION = {
-    latitude: info.coords.latitude,
-    longitude: info.coords.longitude,
-    latitudeDelta: 10,
-    longitudeDelta: 5,
+    latitude: 41.0322,
+    longitude: 28.9859,
+    latitudeDelta: 1,
+    longitudeDelta: 1,
   };
 });
 class Home extends Component {
@@ -39,9 +49,40 @@ class Home extends Component {
     };
 
     return (
-      <MapView initialRegion={INITIAL_REGION} style={{flex: 1}}>
-        {_generateMarkers(this.props.PARK)}
-      </MapView>
+      <View style={{width: '150%'}}>
+        <MapView
+          initialRegion={INITIAL_REGION}
+          style={{height: '98%', zIndex: 1}}>
+          {_generateMarkers(this.props.PARK)}
+        </MapView>
+        <ScrollView
+          horizontal
+          style={{position: 'relative', bottom: 180, zIndex: 5,height:100,paddingBottom:100}}>
+          <View
+            style={{
+              backgroundColor: colors.green,
+              width: 200,
+              height: 100,
+              marginHorizontal: 10,
+              borderRadius: 10,
+            }}></View>
+          <View
+            style={{
+              backgroundColor: colors.green,
+              width: 200,
+              height: 100,
+              marginHorizontal: 10,
+              borderRadius: 10,
+            }}></View>
+          <View
+            style={{
+              backgroundColor: colors.green,
+              width: 200,
+              height: 100,
+              borderRadius: 10,
+            }}></View>
+        </ScrollView>
+      </View>
     );
   }
 }
