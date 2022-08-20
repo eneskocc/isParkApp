@@ -1,0 +1,7 @@
+
+export const GET_PARK = 'redux/GET_PARK';
+export const GET_PARK_REQUEST = 'redux/GET_PARK_REQUEST';
+export const GET_PARK_REQUEST_SUCCESS = 'redux/GET_PARK_REQUEST_SUCCESS';
+export const GET_PARK_REQUEST_FAILURE = 'redux/GET_PARK_REQUEST_FAILURE';
+export const GET_PARK_REQUEST_END = 'redux/GET_PARK_REQUEST_END';
+
