@@ -15,12 +15,21 @@ Geolocation.getCurrentPosition(info => {
   };
 });
 class Home extends Component {
-  componentDidMount() { 
-    this.props.getData()
-   }
-  
+  componentDidMount() {
+    this.props.getData();
+  }
+
   render() {
-    console.log(this.props.PARK)
+    const _generateMarkers = arr => {
+      const markers = [];
+
+      arr.forEach(element => {
+        markers.push(
+          <Marker
+            key={element.parkID}
+            coordinate={{
+              latitude: element.lat,
+              longitude: element.lng,
             }}
           />,
         );
