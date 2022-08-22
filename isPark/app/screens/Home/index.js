@@ -24,6 +24,19 @@ Geolocation.getCurrentPosition(info => {
     longitudeDelta: 1,
   };
 });
+const Item = ({item}) => (
+  <View
+    key={item.parkID}
+    style={{
+      backgroundColor: colors.green,
+      width: 200,
+      height: 100,
+      marginHorizontal: 10,
+      borderRadius: 10,
+    }}>
+    <Text>{item.parkName}</Text>
+  </View>
+);
 class Home extends Component {
   componentDidMount() {
     this.props.getData();
@@ -57,30 +70,19 @@ class Home extends Component {
         </MapView>
         <ScrollView
           horizontal
-          style={{position: 'relative', bottom: 180, zIndex: 5,height:100,paddingBottom:100}}>
-          <View
-            style={{
-              backgroundColor: colors.green,
-              width: 200,
-              height: 100,
-              marginHorizontal: 10,
-              borderRadius: 10,
-            }}></View>
-          <View
-            style={{
-              backgroundColor: colors.green,
-              width: 200,
-              height: 100,
-              marginHorizontal: 10,
-              borderRadius: 10,
-            }}></View>
-          <View
-            style={{
-              backgroundColor: colors.green,
-              width: 200,
-              height: 100,
-              borderRadius: 10,
-            }}></View>
+          style={{
+            position: 'relative',
+            bottom: 180,
+            zIndex: 5,
+            height: 100,
+            paddingBottom: 100,
+            marginRight: 200,
+          }}>
+           <FlatList
+        data={this.props.PARK}
+        renderItem={Item}
+        keyExtractor={item => item.id}
+      />
         </ScrollView>
       </View>
     );
