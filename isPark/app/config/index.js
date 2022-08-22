@@ -7,7 +7,7 @@ const screen = {
   height,
 };
 
-const apiUrl='https://api.ibb.gov.tr/ispark/Park'; 
+const apiUrl='https://api.ibb.gov.tr/ispark'; 
 
 const colors = {
   

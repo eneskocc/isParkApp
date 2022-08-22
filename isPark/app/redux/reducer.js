@@ -8,6 +8,8 @@ const initialState = {
   PARK_ID: [],
   GET_PARK_ID_REQUEST_STATUS: 0,
   GET_PARK_ID_REQUEST_ERROR: false,
+
+  FAVORITE:[],
   
 };
 
@@ -41,6 +43,8 @@ const reducer = (state = initialState, action) => {
       };
     }
 
+
+
     case $.GET_PARK_ID_REQUEST: {
       return {
         ...state,
@@ -52,6 +56,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         GET_PARK_ID_REQUEST_STATUS: 2,
         PARK_ID: action.PARK_ID,
+        FAVORITE:action.PARK_ID,
       };
     }
     case $.GET_PARK_ID_REQUEST_FAILURE: {
