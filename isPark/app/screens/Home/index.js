@@ -83,10 +83,12 @@ class Home extends Component {
           horizontal
           style={{
             position: 'relative',
-            bottom: 180,
+            bottom: 169,
             zIndex: 5,
             height: 100,
             paddingBottom: 100,
+            backgroundColor:colors.white,
+       
             
           }}>
           {this.props.GET_PARK_ID_REQUEST_ERROR ? (

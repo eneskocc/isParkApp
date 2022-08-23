@@ -4,6 +4,8 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {NavigationContainer} from '@react-navigation/native';
 //Home
 import Home from './Home';
+import Favorite from './Favorite';
+import Settings from './Settings';
 
 
 export const HomeStack = createNativeStackNavigator();
@@ -27,7 +29,7 @@ function SettingStackScreen({navigation}) {
       screenOptions={{
         headerShown: false,
       }}>
-      <SettingStack.Screen name="Setting" component={Home} />
+      <SettingStack.Screen name="Setting" component={Settings} />
 
     </SettingStack.Navigator>
   );
@@ -41,7 +43,7 @@ function FavoriteStackScreen({navigation}) {
       screenOptions={{
         headerShown: false,
       }}>
-      <FavoriteStack.Screen name="Favorite" component={Home} />
+      <FavoriteStack.Screen name="Favorite" component={Favorite} />
 
     </FavoriteStack.Navigator>
   );

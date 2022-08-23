@@ -10,8 +10,9 @@ const screen = {
 const apiUrl='https://api.ibb.gov.tr/ispark'; 
 
 const colors = {
-  
+  white:'#FFFFFF',
     green:'#4CE5B1',
+    gray:'#EFEFF4',
 };
 
 
