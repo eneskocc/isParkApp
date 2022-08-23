@@ -17,6 +17,7 @@ import {
   FavoriteStackScreen,
 
 } from './app/screens';
+import Splash from './app/screens/Welcome/Splash';
 const Tab = createBottomTabNavigator();
 
 const TabScreens = ({navigation}) => {
@@ -75,6 +76,7 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen name='Splash' component={Splash} />
           <Stack.Screen name="Home" component={TabScreens} />
         </Stack.Navigator>
       </NavigationContainer>
