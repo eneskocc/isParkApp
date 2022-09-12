@@ -7,6 +7,7 @@ import {
   Image,
   ScrollView,
   ActivityIndicator,
+  TouchableOpacity,
 } from 'react-native';
 import React, {useState, useEffect, componentDidMount, Component} from 'react';
 import MapView from 'react-native-map-clustering';
@@ -79,6 +80,7 @@ class Home extends Component {
           style={{height: '98%', zIndex: 1}}>
           {_generateMarkers(this.props.PARK)}
         </MapView>
+       
         <ScrollView
           horizontal
           style={{
@@ -87,9 +89,7 @@ class Home extends Component {
             zIndex: 5,
             height: 100,
             paddingBottom: 100,
-            backgroundColor:colors.white,
-       
-            
+            backgroundColor: colors.white,
           }}>
           {this.props.GET_PARK_ID_REQUEST_ERROR ? (
             <Text
