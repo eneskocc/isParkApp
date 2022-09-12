@@ -6,6 +6,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import Home from './Home';
 import Favorite from './Favorite';
 import Settings from './Settings';
+import Map from './Map';
 
 
 export const HomeStack = createNativeStackNavigator();
@@ -17,6 +18,8 @@ function HomeStackScreen({navigation}) {
         headerShown: false,
       }}>
       <HomeStack.Screen name="Home" component={Home} />
+      <HomeStack.Screen name="Map" component={Map} />
+
 
     </HomeStack.Navigator>
   );
@@ -30,6 +33,7 @@ function SettingStackScreen({navigation}) {
         headerShown: false,
       }}>
       <SettingStack.Screen name="Setting" component={Settings} />
+      <HomeStack.Screen name="Map" component={Map} />
 
     </SettingStack.Navigator>
   );
@@ -44,6 +48,7 @@ function FavoriteStackScreen({navigation}) {
         headerShown: false,
       }}>
       <FavoriteStack.Screen name="Favorite" component={Favorite} />
+      <HomeStack.Screen name="Map" component={Map} />
 
     </FavoriteStack.Navigator>
   );

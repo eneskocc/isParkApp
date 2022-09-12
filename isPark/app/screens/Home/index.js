@@ -19,10 +19,10 @@ var INITIAL_REGION;
 Geolocation.getCurrentPosition(info => {
   console.log(info);
   INITIAL_REGION = {
-    latitude: info.coords.latitude,
-    longitude: info.coords.longitude,
-    latitudeDelta: 1,
-    longitudeDelta: 1,
+    latitude: 41,
+    longitude: 29.5,
+    latitudeDelta: 2,
+    longitudeDelta: 2,
   };
 });
 

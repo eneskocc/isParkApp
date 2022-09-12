@@ -10,6 +10,7 @@ export class Favorite extends Component {
         this.props.getDataId(780);
       }
   render() {
+    console.log(this.props.FAVORITE)
     return (
       <View>
         <Header txt={'Favorite'}/>
@@ -28,7 +29,7 @@ export class Favorite extends Component {
             </Text>
           ) : (
             this.props.FAVORITE.map(item => (
-                <FavoriteCard key={item.parkID} data={item}/>
+                <FavoriteCard key={item.parkID} data={item} onClick={()=>this.props.navigation.navigate('Map')}/>
             ))
           )}
 

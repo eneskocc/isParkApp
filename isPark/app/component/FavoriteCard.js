@@ -10,7 +10,7 @@ export class FavoriteCard extends Component {
     const w = Math.round(aaa) + '%';
     console.log(aaa);
     return (
-      <View
+      <TouchableOpacity
         style={{
           width: '100%',
           paddingHorizontal: 10,
@@ -18,7 +18,8 @@ export class FavoriteCard extends Component {
           marginVertical: 10,
           backgroundColor: colors.green,
           borderRadius: 10,
-        }}>
+        }}
+        onPress={this.props.onClick}>
             <View style={{width:'100%',alignItems:'flex-end'}}>
             <TouchableOpacity>
           <Image
@@ -84,7 +85,7 @@ export class FavoriteCard extends Component {
           }}>
           {this.props.data.freeTime}
         </Text>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
