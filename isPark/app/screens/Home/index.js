@@ -19,8 +19,8 @@ var INITIAL_REGION;
 Geolocation.getCurrentPosition(info => {
   console.log(info);
   INITIAL_REGION = {
-    latitude: 41.0322,
-    longitude: 28.9859,
+    latitude: info.coords.latitude,
+    longitude: info.coords.longitude,
     latitudeDelta: 1,
     longitudeDelta: 1,
   };

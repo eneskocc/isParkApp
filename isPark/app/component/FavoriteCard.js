@@ -6,7 +6,8 @@ export class FavoriteCard extends Component {
   render() {
     const aaa =
       (this.props.data.emptyCapacity * 100) / this.props.data.capacity;
-    const w = aaa + '%';
+
+    const w = Math.round(aaa) + '%';
     console.log(aaa);
     return (
       <View
